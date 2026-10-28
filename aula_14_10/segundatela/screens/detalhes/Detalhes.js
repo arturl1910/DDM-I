@@ -1,31 +1,46 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image } from 'react-native';
 import styles from './Estilo';
 
 export default function Detalhes({ navigation }) {
   return (
-    // Container principal da tela de detalhes
+    // Container principal que centraliza o conteúdo na tela
     <View style={styles.container}>
+      {/* Bloco do cartão centralizado */}
       <View style={styles.cardFormulario}>
         
-        <Text style={styles.titulo}>Tela de Detalhes</Text>
-        <Text style={styles.subtitulo}>Esta é a terceira tela do aplicativo.</Text>
+        {/* Imagem representativa da receita */}
+        <Image
+          source={{
+            uri: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400'
+          }}
+          style={styles.imagem}
+        />
 
-        {/* Botão para avançar para a tela de Perfil */}
+        <Text style={styles.titulo}>Lasanha à Bolonhesa</Text>
+        <Text style={styles.subtitulo}>Tempo: 45 min | Rendimento: 6 porções</Text>
+
+        <Text style={styles.label}>Ingredientes:</Text>
+        <Text style={{ textAlign: 'center', marginBottom: 10, color: '#555' }}>
+          • Massa para lasanha{"\n"}
+          • 500g de carne moída{"\n"}
+          • Molho de tomate e Queijo Muçarela
+        </Text>
+
+        {/* Botão para voltar à tela Home */}
         <View style={styles.botao}>
-          <Button 
-            title="Ir para Perfil" 
-            onPress={() => navigation.navigate('Perfil')} 
+          <Button
+            title="Voltar para Home"
+            onPress={() => navigation.navigate('Home')}
             color="#007AFF"
           />
         </View>
 
-        {/* navigation.goBack() serve para voltar para a tela anterior (Home) */}
+        {/* Botão para ver o perfil do Chef */}
         <View style={[styles.botao, { marginTop: 10 }]}>
-          <Button 
-            title="Voltar para Home" 
-            onPress={() => navigation.goBack()} 
-            color="#6c757d"
+          <Button
+            title="Ver Perfil do Chef"
+            onPress={() => navigation.navigate('Perfil')}
+            color="#34C759"
           />
         </View>
 

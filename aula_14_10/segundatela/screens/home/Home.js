@@ -8,21 +8,21 @@ export default function Home({ navigation }) {
       {/* Bloco do cartão centralizado */}
       <View style={styles.cardFormulario}>
         
-        {/* Exibição de imagem usando link da web */}
+        {/* Exibição de imagem temática de culinária */}
         <Image
           source={{
-            uri: 'https://reactnative.dev/docs/assets/p_cat1.png'
+            uri: 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=400'
           }}
           style={styles.imagem}
         />
 
-        <Text style={styles.titulo}>Bem-vindo à Home!</Text>
-        <Text style={styles.subtitulo}>Você está logado na aplicação.</Text>
+        <Text style={styles.titulo}>Receitas da Vovó</Text>
+        <Text style={styles.subtitulo}>Explore os melhores pratos do dia!</Text>
 
         {/* Botão que navega para a tela de Detalhes (3ª tela) */}
         <View style={styles.botao}>
           <Button
-            title="Ir para Detalhes"
+            title="Ver Receita em Destaque"
             onPress={() => navigation.navigate('Detalhes')}
             color="#007AFF"
           />
@@ -31,7 +31,7 @@ export default function Home({ navigation }) {
         {/* Botão que navega para a tela de Perfil (4ª tela) */}
         <View style={[styles.botao, { marginTop: 10 }]}>
           <Button
-            title="Ir para Perfil"
+            title="Meu Perfil de Chef"
             onPress={() => navigation.navigate('Perfil')}
             color="#34C759"
           />
